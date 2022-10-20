@@ -43,6 +43,7 @@ const StyledButton = styled.button`
 `;
 
 const StyledButtonWrapper = styled.div`
+  height: 100%;
   border-radius: 1rem;
   border: none;
   color: ${colors.secondary[100]};
