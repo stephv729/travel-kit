@@ -29,7 +29,7 @@ function AuthNavbar() {
       </SecondaryButton>
 
       <StyledNavLink to="/my_trips" leftIcon={<RiHome8Line />}>
-        <PrimaryButton>MY PROPERTIES</PrimaryButton>
+        <PrimaryButton>MY TRIPS</PrimaryButton>
       </StyledNavLink>
 
       {/* <StyledNavLink to="/profile">
