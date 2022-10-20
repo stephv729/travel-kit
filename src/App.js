@@ -7,7 +7,8 @@ import Navbar from "./components/Navbar";
 import LandingPage from "./pages/LandingPage";
 
 const MainContainer = styled.div`
-  min-height: 100vh;
+  height: 100%;
+  width: 100%;
   position: relative;
 `;
 
@@ -22,11 +23,11 @@ function App() {
   return (
     <MainContainer>
       {isModalOpen && (
-            <Modal onModalClose={handleCloseModal}>
-              <LoginForm handleCloseModal={() => setIsModalOpen(false)} />
-            </Modal>
-          )}
-          <Navbar onLoginClick={() => setIsModalOpen(true)} />
+        <Modal onModalClose={handleCloseModal}>
+          <LoginForm handleCloseModal={() => setIsModalOpen(false)} />
+        </Modal>
+      )}
+      <Navbar onLoginClick={() => setIsModalOpen(true)} />
       <Routes>
         <Route path="/" element={<LandingPage />} />
       </Routes>
