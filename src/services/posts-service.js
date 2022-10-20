@@ -2,7 +2,6 @@ import apiFetch from "./api-fetch";
 
 export function getPosts() {
   return apiFetch("/blogposts").then((data) => {
-    console.log("here!!")
     return data;
   });
 }
