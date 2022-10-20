@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { typography, colors } from "../styles";
 import { boxShadow } from "../styles/utils";
 import Input from "./Input";
-import LoadingWave from "./LoadingWave";
+import LoadingWave from "./Loader";
 import { PrimaryButton } from "./Buttons";
 
 const FormWrapper = styled.div`
