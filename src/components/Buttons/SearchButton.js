@@ -52,6 +52,7 @@ const StyledButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   padding: 0.5rem 1rem;
+  background-color: ${colors.secondary[700]};
   cursor: pointer;
   &:hover {
     background-color: ${colors.primary[400]};
@@ -65,7 +66,7 @@ function SearchButton({ onClick, style, route }) {
       <StyledButtonWrapper>
         <FiSearch />
         <StyledButton onClick={onClick} style={style}>
-          SEARCH
+          EXPLORE
         </StyledButton>
       </StyledButtonWrapper>
     </StyledNavLink>
