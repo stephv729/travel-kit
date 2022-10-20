@@ -8,7 +8,9 @@ import AuthNavbar from "./AuthNavbar";
 // import { useAuth } from "../context/auth-context";
 
 const NavBarContainer = styled.div`
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100%;
   ${boxShadow[1]};
   z-index: 1;
 `;
@@ -26,6 +28,7 @@ const ContainerNavBar = styled.div`
 
 const LogoImg = styled.img`
   height: 5rem;
+  filter: drop-shadow(0px 0px 1px black);
 `;
 
 function Navbar({ onLoginClick }) {
