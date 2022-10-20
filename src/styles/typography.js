@@ -1,5 +1,5 @@
 export const fonts = {
-  primary: `'Montserrat', sans-serif`,
+  primary: `'IBM Plex Sans', sans-serif`,
   secondary: `'Inter', sans-serif`,
 };
 

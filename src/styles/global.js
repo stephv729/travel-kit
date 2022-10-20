@@ -4,7 +4,7 @@ import { colors } from "./colors";
 import { fonts } from "./typography";
 
 export const reset = css`
-  @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;700&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
   /* Box sizing rules */
   *,
@@ -80,7 +80,7 @@ export const reset = css`
 export const global = css`
   body {
     font-family: ${fonts.primary};
-    color: ${colors.secondary[700]};
+    color: ${colors.secondary[100]};
     background-color: ${colors.secondary[200]};
   }
 `;
