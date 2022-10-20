@@ -1,10 +1,10 @@
 import styled from "@emotion/styled";
-import Logo from "../assets/icons/logo.png";
+import { NavLink } from "react-router-dom";
 import { fonts, typography } from "../../styles/typography";
 import { boxShadow } from "../../styles/utils";
-import LandLordLayout from "./LandLordLayout";
+import Logo from "../../assets/img/logo.png";
 import UnauthNavbar from "./UnauthNavbar";
-import { NavLink } from "react-router-dom";
+import AuthNavbar from "./AuthNavbar";
 // import { useAuth } from "../context/auth-context";
 
 const NavBarContainer = styled.div`
@@ -24,6 +24,10 @@ const ContainerNavBar = styled.div`
   align-items: center;
 `;
 
+const LogoImg = styled.img`
+  height: 5rem;
+`;
+
 function Navbar({ onLoginClick }) {
   const user = {
     id: 1,
@@ -39,13 +43,9 @@ function Navbar({ onLoginClick }) {
     <NavBarContainer>
       <ContainerNavBar>
         <NavLink to="/">
-          <img src={Logo} alt="Logo" />
+          <LogoImg src={Logo} alt="Logo" />
         </NavLink>
-        {user ? (
-          <LandLordLayout />
-        ) : (
-          <UnauthNavbar onLoginClick={onLoginClick} />
-        )}
+        {user ? <AuthNavbar /> : <UnauthNavbar onLoginClick={onLoginClick} />}
       </ContainerNavBar>
     </NavBarContainer>
   );
