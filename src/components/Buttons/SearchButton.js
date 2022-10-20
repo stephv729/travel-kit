@@ -11,7 +11,11 @@ const StyledNavLink = styled(NavLink)`
 
 const StyledButton = styled.button`
   ${typography.button};
+  background-color: transparent;
   overflow: hidden;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
   border-right: 0.15em solid ${colors.primary[100]};
   white-space: nowrap;
   margin: 0 auto;
@@ -39,9 +43,19 @@ const StyledButton = styled.button`
 `;
 
 const StyledButtonWrapper = styled.div`
+  border-radius: 1rem;
+  border: none;
+  color: ${colors.secondary[100]};
   display: flex;
-  align-items: center;
   gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  &:hover {
+    background-color: ${colors.primary[400]};
+    border: 1px solid ${colors.primary[400]};
+  }
 `;
 
 function SearchButton({ onClick, style, route }) {
