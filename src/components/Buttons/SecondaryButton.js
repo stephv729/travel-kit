@@ -6,7 +6,7 @@ const StyledButton = styled.button`
   ${typography.button};
   background: ${colors.secondary[200]};
   border: 1px solid ${colors.primary[300]};
-  border-radius: 16px;
+  border-radius: 1rem;
   display: flex;
   gap: 0.5rem;
   justify-content: center;
