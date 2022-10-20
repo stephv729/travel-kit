@@ -5,6 +5,7 @@ import { boxShadow } from "../../styles/utils";
 import Logo from "../../assets/img/logo.png";
 import UnauthNavbar from "./UnauthNavbar";
 import AuthNavbar from "./AuthNavbar";
+import { colors } from "../../styles";
 // import { useAuth } from "../context/auth-context";
 
 const NavBarContainer = styled.div`
@@ -28,7 +29,8 @@ const ContainerNavBar = styled.div`
 
 const LogoImg = styled.img`
   height: 5rem;
-  filter: drop-shadow(0px 0px 1px black);
+  object-fit: contain;
+  filter: drop-shadow(0px 0px 2px ${colors.primary[300]});
 `;
 
 function Navbar({ onLoginClick }) {
