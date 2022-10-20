@@ -32,15 +32,37 @@ const StyledPaginationItem = styled.div`
   }
 `;
 
-function PaginationBar() {
+const NextBtn = styled.div`
+  cursor: pointer;
+`;
+
+function PaginationBar({ total, page, onChangePage }) {
+  function handleClick(e) {
+    onChangePage(+e.target.dataset.id);
+  }
+  function handleNextClick() {
+    if (page >= total) return;
+    onChangePage(page + 1);
+  }
+  const pages = Array.from({ length: total }, (_, i) => i + 1);
   return (
     <StyledPagination>
-      <StyledPaginationItem isActive={true}>1</StyledPaginationItem>
-      <StyledPaginationItem>2</StyledPaginationItem>
-      <StyledPaginationItem>3</StyledPaginationItem>
-      <StyledPaginationItem>4</StyledPaginationItem>
-      <StyledPaginationItem>5</StyledPaginationItem>
-      <BsChevronRight />
+      {pages.map((_e, index) => {
+        const pageNumber = index + 1;
+        return (
+          <StyledPaginationItem
+            key={index}
+            data-id={pageNumber}
+            isActive={page === pageNumber}
+            onClick={handleClick}
+          >
+            {pageNumber}
+          </StyledPaginationItem>
+        );
+      })}
+      <NextBtn>
+        <BsChevronRight onClick={handleNextClick} />
+      </NextBtn>
     </StyledPagination>
   );
 }
