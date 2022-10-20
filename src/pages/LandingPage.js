@@ -13,7 +13,7 @@ const MainSection = styled.div`
   flex-direction: column;
   position: absolute;
   top: 15rem;
-  left: 10%;
+  left: 10rem;
   margin: 3rem;
   align-items:flex-start;
   transform: translate(-50%, -50%);
