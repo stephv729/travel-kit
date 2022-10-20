@@ -26,7 +26,7 @@ const StyledInput = styled.input`
 const StyledLabel = styled.label`
   ${typography.overline}
   text-transform: uppercase;
-  color: ${colors.secondary[700]};
+  color: ${colors.secondary[600]};
 `;
 
 function Input({
