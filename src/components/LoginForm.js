@@ -94,7 +94,7 @@ function LoginForm({ onLoginClick, handleCloseModal }) {
         />
         <Error>{error}</Error>
         {status === "loading" && <LoadingWave />}
-        <PrimaryButton type="submit" leftIcon={<RiUserReceivedLine />}>
+        <PrimaryButton type="submit" lefticon={<RiUserReceivedLine />}>
           Login
         </PrimaryButton>
       </Form>

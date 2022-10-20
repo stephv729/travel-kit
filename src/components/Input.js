@@ -38,13 +38,13 @@ function Input({
   placeholder,
   label,
   width,
-  leftIcon,
+  lefticon,
 }) {
   return (
     <>
       {label && <StyledLabel htmlFor={id || name}>{label}</StyledLabel>}
       <StyledInputContainer width={width}>
-        {leftIcon}
+        {lefticon}
         <StyledInput
           type={type}
           name={name}

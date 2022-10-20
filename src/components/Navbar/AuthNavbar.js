@@ -23,17 +23,17 @@ function AuthNavbar() {
       <SearchButton route="/blog_posts" />
       <SecondaryButton
         onClick={() => console.log("Should logout")}
-        leftIcon={<AiOutlineLogout />}
+        lefticon={<AiOutlineLogout />}
       >
         LOGOUT
       </SecondaryButton>
 
-      <StyledNavLink to="/my_trips" leftIcon={<RiHome8Line />}>
+      <StyledNavLink to="/my_trips" lefticon={<RiHome8Line />}>
         <PrimaryButton>MY TRIPS</PrimaryButton>
       </StyledNavLink>
 
       {/* <StyledNavLink to="/profile">
-        <PrimaryButton leftIcon={<AiOutlineUser />}>PROFILE</PrimaryButton>
+        <PrimaryButton lefticon={<AiOutlineUser />}>PROFILE</PrimaryButton>
       </StyledNavLink> */}
     </ButtonsNavBar>
   );

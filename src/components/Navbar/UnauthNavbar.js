@@ -19,9 +19,9 @@ function UnauthNavbar({ onLoginClick }) {
     <ButtonsNavBar>
       <SearchButton route="/blog_posts" />
       <StyledNavLink to="/signup">
-        <SecondaryButton leftIcon={<AiOutlineUserAdd />}>JOIN</SecondaryButton>
+        <SecondaryButton lefticon={<AiOutlineUserAdd />}>JOIN</SecondaryButton>
       </StyledNavLink>
-      <PrimaryButton onClick={onLoginClick} leftIcon={<RiUserReceivedLine />}>
+      <PrimaryButton onClick={onLoginClick} lefticon={<RiUserReceivedLine />}>
         LOGIN
       </PrimaryButton>
     </ButtonsNavBar>

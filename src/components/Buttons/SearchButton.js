@@ -44,15 +44,15 @@ const StyledButtonWrapper = styled.div`
   gap: 0.5rem;
 `;
 
-function SearchButton({ onClick, style , route}) {
+function SearchButton({ onClick, style, route }) {
   return (
     <StyledNavLink to={route}>
-      <StyledButton onClick={onClick} style={style}>
-        <StyledButtonWrapper>
-          <FiSearch />
+      <StyledButtonWrapper>
+        <FiSearch />
+        <StyledButton onClick={onClick} style={style}>
           SEARCH
-        </StyledButtonWrapper>
-      </StyledButton>
+        </StyledButton>
+      </StyledButtonWrapper>
     </StyledNavLink>
   );
 }

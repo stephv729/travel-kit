@@ -26,11 +26,11 @@ const StyledButtonWrapper = styled.div`
   gap: 0.5rem;
 `;
 
-function PrimaryButton({ children, hasIcon, Icon, leftIcon, onClick, style }) {
+function PrimaryButton({ children, hasIcon, Icon, lefticon, onClick, style }) {
   return (
     <StyledButton onClick={onClick} style={style}>
       <StyledButtonWrapper>
-        {leftIcon}
+        {lefticon}
         {children}
         {hasIcon && <Icon />}
       </StyledButtonWrapper>
