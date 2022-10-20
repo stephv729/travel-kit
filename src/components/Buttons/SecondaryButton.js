@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { typography } from "../../styles/typography";
 
 const StyledButton = styled.button`
- ${typography.button};
+  ${typography.button};
   background: ${colors.secondary[200]};
   border: 1px solid ${colors.primary[300]};
   border-radius: 16px;
@@ -23,7 +23,14 @@ const StyledButtonWrapper = styled.div`
   gap: 0.5rem;
 `;
 
-function SecondaryButton({ children, hasIcon, Icon, lefticon, onClick, style }) {
+function SecondaryButton({
+  children,
+  hasIcon,
+  Icon,
+  lefticon,
+  onClick,
+  style,
+}) {
   return (
     <StyledButton onClick={onClick} style={style}>
       <StyledButtonWrapper>
