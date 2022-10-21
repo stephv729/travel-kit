@@ -6,7 +6,7 @@ export default async function apiFetch(
   const token = JSON.parse(sessionStorage.getItem(tokenKey));
   if (token) {
     headers = {
-      ...token,
+      token: `Bearer ${token}`,
       ...headers,
     };
   }
@@ -32,7 +32,7 @@ export default async function apiFetch(
     } catch (error) {
       throw new Error(response.statusText);
     }
-    throw new Error(JSON.stringify(data.errors||data));
+    throw new Error(JSON.stringify(data.errors || data));
   }
   try {
     data = await response.json();
