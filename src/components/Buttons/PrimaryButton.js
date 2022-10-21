@@ -4,7 +4,7 @@ import { typography } from "../../styles/typography";
 
 const StyledButton = styled.button`
   ${typography.button};
-  background: ${colors.primary[500]};
+  background: ${colors.primary[100]};
   border-radius: 1rem;
   border: none;
   color: ${colors.secondary[200]};
