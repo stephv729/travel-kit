@@ -1,7 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login, logout } from "../services/auth-service";
-import { createUser, getUser } from "../services/users-service";
+import { login, logout, signup } from "../services/auth-service";
+import { getUser } from "../services/users-service";
 
 const AuthContext = createContext();
 
@@ -17,7 +17,10 @@ function AuthProvider({ children }) {
       setUser(data);
       setUserStatus("success")
     })
-    .catch((error) => console.log(error));
+    .catch((error) => {
+      setUserStatus("error")
+      console.log(error)
+    });
   }
 
   const loadMemoizedUser = useCallback(loadUser, [])
@@ -35,7 +38,7 @@ function AuthProvider({ children }) {
 
   function handleSignup(userData) {
     console.log(userData)
-    return createUser(userData).then((user) => {
+    return signup(userData).then((user) => {
       setUser(user);
       navigate("/");
     });
