@@ -7,6 +7,7 @@ import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
 import { TripsProvider } from "./context/trips-context";
 import LandingPage from "./pages/LandingPage";
+import PostDetailPage from "./pages/PostDetailPage";
 import PostsPage from "./pages/PostsPage";
 import { colors } from "./styles";
 
@@ -40,7 +41,8 @@ function App() {
         <Navbar onLoginClick={() => setIsModalOpen(true)} />
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/blog_posts" element={<PostsPage />} />
+          <Route path="/blog_posts/" element={<PostsPage />} />
+          <Route path="/blog_posts/:id" element={<PostDetailPage />} />
           <Route
             path="*"
             element={
