@@ -18,12 +18,6 @@ export function createPost(postData) {
   });
 }
 
-// export function updateProperty(postData,id) {
-//   return apiFetch("/blogposts/"+id, { method:"PATCH",body: postData }).then((data) => {
-//     return data;
-//   });
-// }
-
 export function deletePost(id) {
   return apiFetch("/blogposts/"+id, { method:"DELETE"}).then((data) => {
     return data;
