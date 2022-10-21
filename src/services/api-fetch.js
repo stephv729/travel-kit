@@ -6,7 +6,7 @@ export default async function apiFetch(
   const token = JSON.parse(sessionStorage.getItem(tokenKey));
   if (token) {
     headers = {
-      token: `Bearer ${token}`,
+      authorization: `Bearer ${token}`,
       ...headers,
     };
   }
