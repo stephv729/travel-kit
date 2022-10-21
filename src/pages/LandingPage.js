@@ -17,7 +17,6 @@ const MainSection = styled.div`
   margin: 3rem;
   align-items:flex-start;
   transform: translate(-50%, -50%);
-  text-transform: uppercase;
   ${typography.headline[2]};
   color: ${colors.secondary[200]};
 `;
@@ -27,11 +26,11 @@ export default function LandingPage() {
     <MainContainer>
       <BackgroundAutoplay />
       <MainSection>
-        <span>Live</span>
-        <span>Your</span>
-        <span>Dream</span>
+        <span>Share</span>
+        <span>Read</span>
+        <span>Connect</span>
         <PrimaryButton>
-          Plan your next trip
+          Tell us about your last trip
         </PrimaryButton>
       </MainSection>
     </MainContainer>
