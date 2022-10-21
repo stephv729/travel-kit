@@ -7,10 +7,14 @@ import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
 import { useAuth } from "./context/auth-context";
 import { TripsProvider } from "./context/trips-context";
+import AddPostPage from "./pages/AddPostPage";
+import AddTripPage from "./pages/AddTripPage";
 import LandingPage from "./pages/LandingPage";
+import MyTripsPage from "./pages/MyTripsPage";
 import PostDetailPage from "./pages/PostDetailPage";
 import PostsPage from "./pages/PostsPage";
 import SignupPage from "./pages/SignupPage";
+import TripPage from "./pages/TripPage";
 import { colors } from "./styles";
 
 const MainContainer = styled.div`
@@ -42,10 +46,17 @@ function App() {
         )}
         <Navbar onLoginClick={() => setIsModalOpen(true)} />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route
+            path="/"
+            element={<LandingPage onLoginClick={() => setIsModalOpen(true)} />}
+          />
           <Route path="/blog_posts/" element={<PostsPage />} />
-          {!user && <Route path="/signup" element={<SignupPage />} />}
           <Route path="/blog_posts/:id" element={<PostDetailPage />} />
+          {user && <Route path="/my_trips" element={<MyTripsPage />} />}
+          {user && <Route path="/trips/:id" element={<TripPage />} />}
+          {user && <Route path="/addpost/:id" element={<AddPostPage />} />}
+          {user && <Route path="/addtrip" element={<AddTripPage />} />}
+          {!user && <Route path="/signup" element={<SignupPage />} />}
           <Route
             path="*"
             element={
