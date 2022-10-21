@@ -5,7 +5,7 @@ import { boxShadow } from "../styles/utils";
 import { typography } from "../styles/typography";
 import { colors } from "../styles/colors";
 import noImageAvailable from "../assets/img/no-image-available.png";
-import { shortDate } from "./utils";
+import { shortDate } from "../utils";
 
 const Wrapper = styled.div`
   position: relative;
