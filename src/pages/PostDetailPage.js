@@ -5,8 +5,8 @@ import { typography } from "../styles/typography";
 import { colors } from "../styles/colors";
 import { showPost } from "../services/posts-service";
 import defaultImg from "../assets/img/no-image-available.png";
-import { shortDate } from "../components/utils";
 import Loader from "../components/Loader";
+import { shortDate } from "../utils";
 
 const Wrapper = styled.div`
   min-height: inherit;
