@@ -3,8 +3,9 @@ import { NavLink } from "react-router-dom";
 import { BsCalendarCheck } from "react-icons/bs";
 import { boxShadow } from "../styles/utils";
 import { typography } from "../styles/typography";
-import noImageAvailable from "../assets/img/no-image-available.png";
 import { colors } from "../styles/colors";
+import noImageAvailable from "../assets/img/no-image-available.png";
+import { shortDate } from "./utils";
 
 const Wrapper = styled.div`
   position: relative;
@@ -13,7 +14,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   ${boxShadow[1]};
   border-radius: 0.5rem;
-  background-color: ${colors.primary[200]};
+  background-color: ${colors.primary[400]};
   cursor: pointer;
   user-select: none;
 `;
@@ -51,7 +52,7 @@ const LastUpdate = styled.div`
 `;
 
 const TitleContainer = styled.div`
-  color: ${colors.secondary[700]};
+  color: ${colors.secondary[100]};
   display: flex;
   justify-content: center;
   align-items: center;
@@ -67,13 +68,6 @@ const StyledNavLink = styled(NavLink)`
 
 function PostCardDetail({ post }) {
   const { id, title, photoUrl, updatedAt } = post;
-  const updateDate = new Date(updatedAt);
-  const parseOptions = { weekday: "short", month: "short", day: "numeric" };
-  const parsedUpdateDate = new Intl.DateTimeFormat(
-    "en-US",
-    parseOptions
-  ).format(updateDate);
-  // const { user } = useAuth();
 
   return (
     <Wrapper>
@@ -81,7 +75,7 @@ function PostCardDetail({ post }) {
         <CardImg>
           <LastUpdate>
             <BsCalendarCheck />
-            {parsedUpdateDate}
+            {shortDate(updatedAt)}
           </LastUpdate>
           <ShowCaseImg
             src={photoUrl || noImageAvailable}
