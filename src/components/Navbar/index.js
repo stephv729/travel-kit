@@ -1,4 +1,5 @@
 import styled from "@emotion/styled";
+import { useEffect, useState } from "react";
 import { NavLink, useLocation } from "react-router-dom";
 import { fonts, typography } from "../../styles/typography";
 import { boxShadow } from "../../styles/utils";
@@ -6,8 +7,7 @@ import Logo from "../../assets/img/logo.png";
 import UnauthNavbar from "./UnauthNavbar";
 import AuthNavbar from "./AuthNavbar";
 import { colors } from "../../styles";
-import { useEffect, useState } from "react";
-// import { useAuth } from "../context/auth-context";
+import { useAuth } from "../../context/auth-context";
 
 const NavBarContainer = styled.div`
   position: ${({ isRoot }) => (isRoot ? "absolute" : "static")};
@@ -44,16 +44,8 @@ function Navbar({ onLoginClick }) {
       setIsRoot(true);
     }
   }, [location]);
-  let user;
-  // const user = {
-  //   id: 1,
-  //   name: "John Doe",
-  //   email: "johndoe@gmail.com",
-  //   avatar: "https://randomuser.me/api/portraits/m/1.jpg",
-  //   role: "Homeseeker",
-  // };
-
-  // const { user } = useAuth();
+  
+  const { user } = useAuth();
 
   return (
     <NavBarContainer isRoot={isRoot}>
