@@ -5,11 +5,11 @@ const TripsContext = createContext();
 
 function TripsProvider({ children }) {
   const [posts, setPosts] = useState([]);
+ 
 
   useEffect(() => {
     getPosts()
       .then((data) => {
-        console.log(data);
         setPosts(data);
       })
       .catch(console.log);
