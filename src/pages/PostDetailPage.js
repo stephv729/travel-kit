@@ -78,7 +78,7 @@ export default function PostDetailPage() {
           <TitleContainer>
             <h2>{title}</h2>
             <h4>
-              Last Updated on {shortDate(updatedAt)} by @{userDetails?.username}
+              Last Updated on {shortDate(updatedAt)} by @{userDetails?.username || "anonymous"}
             </h4>
           </TitleContainer>
           <BodyContainer>
