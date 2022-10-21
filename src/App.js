@@ -5,10 +5,12 @@ import Loader from "./components/Loader";
 import LoginForm from "./components/LoginForm";
 import Modal from "./components/Modal";
 import Navbar from "./components/Navbar";
+import { useAuth } from "./context/auth-context";
 import { TripsProvider } from "./context/trips-context";
 import LandingPage from "./pages/LandingPage";
 import PostDetailPage from "./pages/PostDetailPage";
 import PostsPage from "./pages/PostsPage";
+import SignupPage from "./pages/SignupPage";
 import { colors } from "./styles";
 
 const MainContainer = styled.div`
@@ -22,7 +24,7 @@ const NotFoundContainer = styled.div`
 `;
 
 function App() {
-  const status = "idle"; // should come from useAuth
+  const { user, status } = useAuth();
   const [isModalOpen, setIsModalOpen] = useState(false);
   function handleCloseModal(e) {
     if (e.target.dataset.type === "modal") {
@@ -42,6 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<LandingPage />} />
           <Route path="/blog_posts/" element={<PostsPage />} />
+          {!user && <Route path="/signup" element={<SignupPage />} />}
           <Route path="/blog_posts/:id" element={<PostDetailPage />} />
           <Route
             path="*"
