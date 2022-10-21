@@ -1,4 +1,4 @@
-import SignUpForm from "../components/SignUpForm";
+import SignUpForm from "../components/SignupForm";
 import { colors } from "../styles";
 import styled from "@emotion/styled";
 
