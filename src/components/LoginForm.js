@@ -6,6 +6,7 @@ import { boxShadow } from "../styles/utils";
 import Input from "./Input";
 import LoadingWave from "./Loader";
 import { PrimaryButton } from "./Buttons";
+import { useAuth } from "../context/auth-context";
 
 const FormWrapper = styled.div`
   display: flex;
@@ -43,7 +44,7 @@ function LoginForm({ onLoginClick, handleCloseModal }) {
   });
   const [error, setError] = useState("");
   const [status, setStatus] = useState("idle");
-  // const { login } = useAuth();
+  const { login } = useAuth();
 
   useEffect(() => {
     setError("");
@@ -57,17 +58,17 @@ function LoginForm({ onLoginClick, handleCloseModal }) {
   function handleSubmit(e) {
     e.preventDefault();
     setStatus("loading");
-    setTimeout(() => {
-      console.log("should login");
-      setStatus("success");
-      handleCloseModal();
-    }, 2000);
-    // login(formData)
-    //   .then(() => {
-    //     setStatus("success");
-    //     handleCloseModal();
-    //   })
-    //   .catch((error) => setError(JSON.parse(error.message)));
+    // setTimeout(() => {
+    //   console.log("should login");
+    //   setStatus("success");
+    //   handleCloseModal();
+    // }, 2000);
+    login(formData)
+      .then(() => {
+        setStatus("success");
+        handleCloseModal();
+      })
+      .catch((error) => setError(JSON.parse(error.message)));
   }
 
   return (
