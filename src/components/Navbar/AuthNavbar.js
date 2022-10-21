@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { AiOutlineLogout, AiOutlineUser } from "react-icons/ai";
 import { RiHome8Line } from "react-icons/ri";
 import { PrimaryButton, SearchButton, SecondaryButton } from "../Buttons";
+import { useAuth } from "../../context/auth-context";
 // import { useAuth } from "../context/auth-context";
 
 const ButtonsNavBar = styled.div`
@@ -16,13 +17,13 @@ const StyledNavLink = styled(NavLink)`
 `;
 
 function AuthNavbar() {
-  // const { logout } = useAuth();
+  const { logout } = useAuth();
 
   return (
     <ButtonsNavBar>
       <SearchButton route="/blog_posts" />
       <SecondaryButton
-        onClick={() => console.log("Should logout")}
+        onClick={logout}
         lefticon={<AiOutlineLogout />}
       >
         LOGOUT
