@@ -14,9 +14,9 @@ const StyledPaginationItem = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 31px;
-  width: 31px;
-  border-radius: 4px;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 0.25rem;
   background-color: ${({ isActive }) =>
     isActive ? colors.primary[100] : colors.primary[200]};
   color: ${({ isActive }) =>
