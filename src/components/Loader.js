@@ -12,7 +12,7 @@ const StyledLoading = styled.div`
 export default function Loader({ color }) {
   return (
     <StyledLoading>
-      <RaceBy size={47} speed={1} color={color || colors.primary[300]} />
+      <RaceBy size={47} speed={1} color={color || colors.primary[500]} />
     </StyledLoading>
   );
 }
