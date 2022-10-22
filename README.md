@@ -2,7 +2,9 @@
 - Allows any to see others blogposts
 - Allows authenticated user to create a trip and see their trip list
 - Allows authenticated user to create a blogpost related to a trip
-
+#### There's a default user and its credetianls are: 
+    - email: test@mail.com
+    - password: 123456
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
